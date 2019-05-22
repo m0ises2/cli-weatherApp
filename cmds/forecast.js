@@ -1,3 +1,3 @@
 module.exports = (args) => {
-    console.log('tomorrow is rainy')
+    console.log('Forecast not available.')
 }

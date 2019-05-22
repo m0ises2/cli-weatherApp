@@ -1,10 +1,9 @@
 const minimist = require('minimist')
+const error = require('./utils/error')
 
 module.exports = () => {
   const args = minimist(process.argv.slice(2))
   
-  console.log(args);
-
   let cmd = args._[0] || 'help'
 
   if (args.version || args.v) {
@@ -33,7 +32,7 @@ module.exports = () => {
       break
 
     default:
-      console.error(`"${cmd}" is not a valid command!`)
+      error(`"${cmd}" is not a valid command`, true)
       break
   }
 }
